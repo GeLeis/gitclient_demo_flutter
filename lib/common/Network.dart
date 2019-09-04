@@ -15,7 +15,7 @@ class Network {
 
   static Dio dio = Dio(
     BaseOptions(
-      baseUrl: 'https//api.github.com',
+      baseUrl: 'https://api.github.com',
       headers: {
         HttpHeaders.acceptHeader: "application/vnd.github.squirrel-girl-preview,"
             "application/vnd.github.symmetra-preview+json",
@@ -70,11 +70,16 @@ class Network {
       // 列表下拉刷新，需要删除缓存（拦截器中会读取这些信息）
       _options.extra.addAll({"refresh": true, "list": true});
     }
+    print('---------fetching------start-------');
     var r = await dio.get<List>(
-      "user/repos",
+      "/user/repos",
       queryParameters: queryParameters,
       options: _options,
     );
-    return r.data.map((e) => Repo.fromJson(e)).toList();
+    print('resut = $r');
+    return r.data.map((e) {
+      print('subItem $e');
+      return Repo.fromJson(e);
+    }).toList();
   }
 }

@@ -25,7 +25,7 @@ class _LoginRouteState extends State<LoginRoute> {
   void initState() {
     // 自动填充上次登录的用户名，填充后将焦点定位到密码输入框
     _unameController.text = Global.profile.lastLogin;
-    if (_unameController.text != null) {
+    if (_unameController.text.length > 0) {
       _nameAutoFocus = false;
     }
     super.initState();
@@ -33,6 +33,7 @@ class _LoginRouteState extends State<LoginRoute> {
 
   @override
   Widget build(BuildContext context) {
+    print("22__$_nameAutoFocus");
     var gm = GmLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(title: Text(gm.login)),
@@ -119,7 +120,7 @@ class _LoginRouteState extends State<LoginRoute> {
         if (e.response?.statusCode == 401) {
           print('11111111111');
           print('response = ${e.response}');
-          Fluttertoast.showToast(msg: GmLocalizations.of(context).userNameOrPasswordWrong,timeInSecForIos: 2);
+          Fluttertoast.showToast(msg: GmLocalizations.of(context).userNameOrPasswordWrong,timeInSecForIos: 2,gravity: ToastGravity.CENTER);
         } else {
           print('222222222222');
           print('error ${e.toString()}');
