@@ -17,6 +17,8 @@ class HomeRoute extends StatefulWidget {
 class _HomeRouteState extends State<HomeRoute> {
   @override
   Widget build(BuildContext context) {
+    print('****home buildxxxxxxxxxxxx');
+    debugPrint('测试');
     return Scaffold(
       appBar: AppBar(
         title: Text(GmLocalizations.of(context).home),

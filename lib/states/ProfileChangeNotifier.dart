@@ -15,7 +15,7 @@ class ProfileChangeNotifier extends ChangeNotifier {
     super.notifyListeners();//通知依赖的widget更新
   }
 }
-//用户信息
+//用户信息):
 class UserModel extends ProfileChangeNotifier {
   User get user => _profile.user;
   bool get isLogin => user != null;
