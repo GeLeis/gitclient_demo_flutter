@@ -1,11 +1,7 @@
-matrix:
-  include:
-    # 声明 iOS 的运行环境
-    - os: osx
-      language: objective-c
-      osx_image: xcode10.2
-      script:
-        - flutter doctor && flutter -v build ios --no-codesign
+os:
+  - osx
 install:
-    - git clone https://github.com/flutter/flutter.git
-    - export PATH="$PATH:`pwd`/flutter/bin"
+  - git clone https://github.com/flutter/flutter.git
+  - export PATH="$PATH:`pwd`/flutter/bin"
+script:
+  - flutter doctor && flutter -v build ios --no-codesign
