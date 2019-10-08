@@ -22,6 +22,7 @@ class S implements WidgetsLocalizations {
   TextDirection get textDirection => TextDirection.ltr;
 
   String get app_title => "app config";
+  String message_tip(String count) => "clickCount $count";
 }
 
 class $en extends S {
@@ -36,6 +37,8 @@ class $zh extends S {
 
   @override
   String get app_title => "app配置";
+  @override
+  String message_tip(String count) => "点击次数 $count";
 }
 
 class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {

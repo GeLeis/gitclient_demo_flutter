@@ -1,3 +1,4 @@
 {
-  "app_title": "app config"
+  "app_title": "app config",
+  "message_tip": "clickCount $count"
 }

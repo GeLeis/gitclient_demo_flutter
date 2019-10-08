@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'common/global.dart';
@@ -10,9 +11,22 @@ import 'routes/LanguageRoute.dart';
 import 'routes/ThemeChangeRoute.dart';
 
 void main() {
+  //先显示调用
+  WidgetsFlutterBinding.ensureInitialized();
+//  print("tststst1");
+//  if (kReleaseMode) {
+//    print("release");
+//  } else {
+//    print("debug");
+//  }
+//  assert(() {
+//    //Do sth for debug
+//    print("tststst2");
+//    return true;
+//  }());
   //确保gobal.init方法不抛出异常
   Global.init().then((e){
-    print('result = $e');
+//    print('result = $e');
     runApp(MyApp());
   });
 }
@@ -20,6 +34,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+//    print('测试');
     return MultiProvider(
       providers: <SingleChildCloneableWidget>[
         ChangeNotifierProvider.value(value: ThemeModel()),
