@@ -25,6 +25,7 @@ void main() {
 //    return true;
 //  }());
   //确保gobal.init方法不抛出异常
+  print('测试travis');
   Global.init().then((e){
 //    print('result = $e');
     runApp(MyApp());
